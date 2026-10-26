@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  底部导航的三个图标用自带的矢量图，而不是依赖 material-icons 扩展库：
+  整个 App 只需要三个图标，为此多背一个依赖（还可能和 BOM 版本对不上）不划算。
+  fillColor 固定为黑色：Icon 组件会用 LocalContentColor 覆盖着色。
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="M10,20v-6h4v6h5v-8h3L12,3 2,12h3v8z" />
+</vector>

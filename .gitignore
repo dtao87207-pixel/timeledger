@@ -1,0 +1,21 @@
+*.iml
+.gradle/
+.idea/
+.kotlin/
+.DS_Store
+build/
+captures/
+.externalNativeBuild
+.cxx
+local.properties
+
+# 工具链就放在项目里（自带 JDK 21 + Android SDK），项目因此自成一体；
+# 但它是 800 MB 的工具，不是源码，绝不能进版本库。
+.toolchain/
+
+# 注意：app/schemas/ 必须提交，不能忽略。
+# 那是 Room 导出的数据库结构快照，是写迁移脚本的唯一依据。
+
+# Python helper scripts
+__pycache__/
+*.pyc

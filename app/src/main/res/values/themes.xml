@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      界面完全由 Compose 绘制，这个主题只负责两件事：不要 ActionBar、给窗口一个底色。
+      因此**不需要**引入 com.google.android.material 依赖 —— 那个库只为 XML 主题服务，
+      在这里纯属多余。
+    -->
+    <style name="Theme.TimeLedger" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/window_background</item>
+    </style>
+</resources>

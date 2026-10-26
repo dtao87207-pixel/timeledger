@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App 名：需求里「暂定为时间管理/时间记账」，这里取「时间记账」作为主名。 -->
+    <string name="app_name">时间记账</string>
+
+    <!-- 底部导航 -->
+    <string name="tab_home">首页</string>
+    <string name="tab_calendar">日历</string>
+    <string name="tab_stats">统计</string>
+
+    <!--
+      日视图（首页显示今天、日历显示选中的那天，两处共用同一套排版）。
+      文案前缀用 day_ 而不是 home_，因为它不只属于首页。
+    -->
+    <string name="day_recorded_unit">有记录</string>
+    <string name="day_unrecorded_hint">未记录 %1$s</string>
+    <string name="day_section_plan">计划 vs 实际</string>
+    <string name="day_section_goals">目标</string>
+    <string name="day_section_categories">这一天的时间去向</string>
+    <string name="day_section_apps">按应用看</string>
+    <string name="day_current_running">正在进行</string>
+    <string name="day_current_recent">刚刚</string>
+    <string name="day_current_unknown">当前时间</string>
+    <string name="day_section_timeline">时间轴</string>
+    <string name="day_section_missing">缺失时间</string>
+    <string name="day_no_goals">这一天没有生效中的目标</string>
+    <string name="day_no_categories">这一天还没有任何记录</string>
+    <string name="day_share_unrecorded_hint">灰色那一片是没有记录的时间。点时间轴上的空白块，可以看到每一段各自是怎么回事。</string>
+    <string name="day_chunk_expand">展开</string>
+    <string name="day_chunk_collapse">收起</string>
+    <string name="day_no_records">这一天还没有记录</string>
+    <string name="day_no_gaps">这一天没有缺失的时间段</string>
+    <string name="day_empty_day">这一天还没有任何记录</string>
+    <string name="day_expand">展开</string>
+    <string name="day_collapse">收起</string>
+    <string name="day_action_manage_goals">管理</string>
+    <string name="day_action_manage_plans">课表</string>
+    <string name="day_no_plans">今天没有课程安排。如果课表还没建，加一次就能看到「计划 vs 实际」。</string>
+    <string name="day_plan_none_today">今天没有课程安排</string>
+
+    <!-- 课程表 -->
+    <string name="plan_title">课程表</string>
+    <string name="plan_action_new">新建</string>
+    <string name="plan_action_edit">编辑</string>
+    <string name="plan_action_delete">删除</string>
+    <string name="plan_action_activate">启用</string>
+    <string name="plan_action_deactivate">停用</string>
+    <string name="plan_inactive">已停用（不再计入计划对比，历史记录不受影响）</string>
+    <string name="plan_cross_midnight_badge">跨夜</string>
+    <string name="plan_cross_midnight">结束时间不晚于开始时间，这一条会跨过午夜</string>
+    <string name="plan_empty">还没有课程表。加上每周固定的课，首页就能对比「计划 vs 实际」了。</string>
+    <string name="plan_empty_day">—</string>
+    <string name="plan_count">%1$d 节</string>
+    <string name="plan_single_date_section">单次日程</string>
+    <string name="plan_delete_title">删除这一条？</string>
+    <string name="plan_delete_message">将删除「%1$s」。已经产生的记录与统计不受影响，但删除后无法恢复。</string>
+    <string name="plan_form_create">新建课程</string>
+    <string name="plan_form_edit">编辑课程</string>
+    <string name="plan_field_title">名称</string>
+    <string name="plan_field_day">星期</string>
+    <string name="plan_field_time">时间</string>
+    <string name="plan_field_start">开始</string>
+    <string name="plan_field_end">结束</string>
+    <string name="plan_field_category">分类（可不选）</string>
+    <string name="plan_field_activity">活动（可不选）</string>
+    <string name="plan_field_location">地点（可不填）</string>
+    <string name="plan_duration_preview">时长：%1$s</string>
+    <string name="calendar_action_plans">课程表</string>
+
+    <!-- 事后确认 -->
+    <string name="confirm_title">确认</string>
+    <string name="confirm_section_pending">待确认</string>
+    <string name="confirm_section_gaps">缺失时间</string>
+    <string name="confirm_action_confirm">确认</string>
+    <string name="confirm_action_edit">修改</string>
+    <string name="confirm_action_fill">补记</string>
+    <string name="confirm_action_confirm_all">全部确认</string>
+    <string name="confirm_empty">这一天的记录都已经确认过了。</string>
+    <string name="confirm_hint_gaps">只列出 10 分钟以上的空档：更短的频繁追问，只会让人关掉提醒。</string>
+    <string name="confirm_form_category">分类</string>
+    <string name="confirm_form_activity">活动（可不选）</string>
+    <string name="confirm_form_note">备注（可不填）</string>
+    <string name="day_action_review_pending">去确认</string>
+    <string name="day_action_fill_gaps">补记</string>
+
+    <!-- 目标管理 -->
+    <string name="goals_title">目标</string>
+    <string name="goals_back">‹ 返回</string>
+    <string name="goals_action_new">新建</string>
+    <string name="goals_action_edit">编辑</string>
+    <string name="goals_action_deactivate">停用</string>
+    <string name="goals_action_activate">启用</string>
+    <string name="goals_action_delete">删除</string>
+    <string name="goals_inactive">已停用（不再计入复盘，历史记录不受影响）</string>
+    <string name="goals_empty">还没有目标。目标决定了复盘与统计的口径，建议先建一个，例如「Java 每天 3 小时」。</string>
+    <string name="goals_delete_title">删除这个目标？</string>
+    <string name="goals_delete_message">将删除「%1$s」。已经产生的记录与统计数据不受影响，但删除后无法恢复。</string>
+
+    <string name="goals_form_create">新建目标</string>
+    <string name="goals_form_edit">编辑目标</string>
+    <string name="goals_field_title">名称</string>
+    <string name="goals_field_type">类型</string>
+    <string name="goals_field_period">周期</string>
+    <string name="goals_field_target">目标值</string>
+    <string name="goals_field_category">分类</string>
+    <string name="goals_field_activity">活动（可不选）</string>
+    <string name="goals_activity_none">不指定活动</string>
+    <string name="goals_no_activities">该分类下还没有活动</string>
+
+    <string name="goals_type_time">时长</string>
+    <string name="goals_type_count">计数</string>
+    <string name="goals_type_frequency">频次</string>
+    <string name="goals_period_day">每日</string>
+    <string name="goals_period_week">每周</string>
+    <string name="goals_period_month">每月</string>
+    <string name="goals_action_catalog">分类与活动</string>
+
+    <!-- 分类与活动管理 -->
+    <string name="catalog_title">分类与活动</string>
+    <string name="catalog_action_new_category">新建分类</string>
+    <string name="catalog_action_edit">编辑</string>
+    <string name="catalog_action_add_activity">添加活动</string>
+    <string name="catalog_action_archive">归档</string>
+    <string name="catalog_action_restore">恢复</string>
+    <string name="catalog_archived">已归档</string>
+    <string name="catalog_builtin">内置</string>
+    <string name="catalog_activity_count">%1$d 个活动</string>
+    <string name="catalog_no_activities">还没有活动</string>
+    <string name="catalog_empty">还没有分类。</string>
+    <string name="catalog_archived_hint">已归档的排在最后：它们不会再出现在选择器里，但历史记录仍能正常显示。</string>
+    <string name="catalog_form_category_create">新建分类</string>
+    <string name="catalog_form_category_edit">编辑分类</string>
+    <string name="catalog_form_activity_create">新建活动</string>
+    <string name="catalog_form_activity_edit">编辑活动</string>
+    <string name="catalog_field_name">名称</string>
+    <string name="catalog_field_color">颜色</string>
+    <string name="catalog_field_category">所属分类：%1$s</string>
+    <string name="catalog_color_inherit">继承分类色</string>
+    <string name="catalog_builtin_hint">内置分类可以改名字、改颜色、归档，但不会被删除 —— 历史记录依赖它们的归属。</string>
+
+    <!-- 日历 -->
+    <string name="calendar_today">今天</string>
+
+    <!-- 统计 -->
+    <string name="stats_period_week">周</string>
+    <string name="stats_period_month">月</string>
+    <string name="stats_period_year">年</string>
+    <string name="stats_current_period">本期</string>
+    <string name="stats_total_unit">有记录</string>
+    <string name="stats_section_trend">趋势</string>
+    <string name="stats_trend_peak">峰值 %1$s</string>
+    <string name="stats_section_categories">分类排行</string>
+    <string name="stats_section_pie">分类占比</string>
+    <string name="stats_pie_total">总时长</string>
+    <string name="stats_section_activities">活动排行</string>
+    <string name="stats_section_apps">应用排行</string>
+    <string name="stats_no_apps">这段时间还没有系统采集到的应用使用记录</string>
+    <string name="stats_hidden_apps">另有 %1$d 个应用未显示</string>
+    <string name="stats_section_goals">目标</string>
+    <string name="stats_no_data">这段时间还没有记录</string>
+    <string name="stats_no_categories">这段时间还没有已确认的分类时间</string>
+    <string name="stats_no_activities">这段时间还没有已确认的活动</string>
+    <string name="stats_hidden_activities">另有 %1$d 个活动未显示</string>
+    <string name="stats_no_goals">当前没有生效中的目标</string>
+
+    <!-- App 归类（需求九节） -->
+    <string name="mapping_title">App 归类</string>
+    <string name="mapping_action_assign">归类</string>
+    <string name="mapping_action_change">修改</string>
+    <string name="mapping_section_pending">待归类（%1$d）</string>
+    <string name="mapping_section_handled">已处理</string>
+    <string name="mapping_no_pending">没有等着归类的 App 了。新用到的 App 会自动出现在这里。</string>
+    <string name="mapping_field_category">分类（可不选）</string>
+    <string name="mapping_field_activity">活动（可不选）</string>
+    <string name="mapping_action_open">去归类</string>
+
+    <!-- 记录编辑 -->
+    <string name="record_edit_action_delete">删除</string>
+    <string name="record_edit_field_time">时间</string>
+    <string name="record_edit_field_start">开始</string>
+    <string name="record_edit_field_end">结束</string>
+    <string name="record_edit_field_category">分类（可不选）</string>
+    <string name="record_edit_field_activity">活动（可不选）</string>
+    <string name="record_edit_field_count">次数（可不填）</string>
+    <string name="record_edit_field_note">备注（可不填）</string>
+    <string name="record_edit_duration">时长：%1$s</string>
+    <string name="record_edit_instant">这是一笔只记了次数的记录，不占时间</string>
+    <string name="record_edit_cross_midnight">结束时间早于开始时间，这一笔会跨过午夜</string>
+    <string name="record_edit_delete_title">删除这一笔？</string>
+    <string name="record_edit_delete_message">将删除「%1$s %2$s」。删除后无法恢复，统计也会随之变化。</string>
+
+    <!-- 快速添加 -->
+    <string name="action_quick_add">记一笔</string>
+    <string name="quick_add_title">记一笔</string>
+    <string name="quick_add_duration">做了多久</string>
+    <string name="quick_add_activity">做了什么</string>
+    <string name="action_save">保存</string>
+    <string name="action_cancel">取消</string>
+</resources>

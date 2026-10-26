@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 窗口底色：与 Compose 里的浅色 background 保持一致，避免启动瞬间闪一下别的颜色 -->
+    <color name="window_background">#FAF7F3</color>
+    <color name="ic_launcher_background">#3F6BFF</color>
+</resources>

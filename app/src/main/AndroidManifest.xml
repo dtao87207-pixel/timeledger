@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+      提醒功能需要的两个权限：
+
+      * POST_NOTIFICATIONS：Android 13+ 的运行时权限，必须由用户在界面上授权
+        （见 MainActivity 里的请求）。没有它通知会被系统静默丢弃 —— 不会崩，
+        但提醒也不会出现，所以界面上要问一次。
+      * RECEIVE_BOOT_COMPLETED：系统的闹钟在重启后会被清空，
+        需要在开机广播里重新安排，否则提醒会「悄悄消失」。
+
+      UsageStats 的 PACKAGE_USAGE_STATS（系统感知）：
+      这是**特殊权限**，不是运行时权限 —— 声明它的作用不是「拿到权限」，
+      而是让本 App 出现在系统设置的「使用情况访问」列表里。
+      不声明的话，用户在那张列表里根本找不到我们，也就永远授权不了。
+      真正的判定见 data/usage/UsageAccess.kt（查 AppOps，只有 MODE_ALLOWED 才算给了）。
+      tools:ignore 是因为该权限受保护、静态检查会警告；这是官方文档描述的用法。
+    -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+
+    <!--
+      Android 11+ 的包可见性。
+
+      为了把包名显示成「微信」而不是「com.tencent.mm」，需要查询应用名。
+      只声明「带 LAUNCHER 入口的应用」就够用，比 QUERY_ALL_PACKAGES 克制得多：
+      我们只需要给用户看得见的 App 起名字，不需要枚举整个系统。
+    -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+    </queries>
+
+    <application
+        android:name=".TimeLedgerApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TimeLedger">
+
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.TimeLedger"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--
+          提醒闹钟的接收器：只接自己 App 发出的闹钟，因此不导出。
+        -->
+        <receiver
+            android:name=".ui.reminder.ReminderReceiver"
+            android:exported="false" />
+
+        <!--
+          开机接收器必须导出：BOOT_COMPLETED 是系统广播，未导出的接收器收不到。
+          它只做「重新安排闹钟」，不接受任何外部指令，所以导出是安全的。
+        -->
+        <receiver
+            android:name=".ui.reminder.BootReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

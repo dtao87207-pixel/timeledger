@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  自适应图标的前景层：画一个表盘。
+  viewport 用 108（自适应图标规范），实际内容收在中间 72x72 的安全区里，
+  这样在各种系统裁切形状（圆形/方形/水滴）下都不会被切掉。
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- 表盘 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,28 m-26,0 a26,26 0 1,0 52,0 a26,26 0 1,0 -52,0" />
+    <!-- 时针 -->
+    <path
+        android:fillColor="#3F6BFF"
+        android:pathData="M52,38 h4 v18 h-4 z" />
+    <!-- 分针 -->
+    <path
+        android:fillColor="#3F6BFF"
+        android:pathData="M56,52 h16 v4 h-16 z" />
+</vector>
